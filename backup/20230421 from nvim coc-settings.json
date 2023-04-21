@@ -1,0 +1,7 @@
+{
+	"coc.preferences.extensionupdatecheck":"weekly",
+	"suggest.noselect":true,
+	"suggest.enablePreselect":false,
+	"http.proxy": "http://honghao:tom232___@proxy:80"
+}
+

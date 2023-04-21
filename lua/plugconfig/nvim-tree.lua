@@ -6,6 +6,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- OR setup with some options
+-- You should use PackerSync after changes, even I don't know why
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	root_dirs = {"~/AppData/Local/nvim/"},
@@ -15,7 +16,7 @@ require("nvim-tree").setup({
 	},
     git = {
         enable = true,
-        ignore = false,
+        ignore = true,
         show_on_dirs = true,
         show_on_open_dirs = true,
         timeout = 400,

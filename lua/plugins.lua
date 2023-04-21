@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons', -- optional
         },
         config = function()
-            require("nvim-tree").setup {}
+            require("nvim-tree").setup({})
         end
     }
 -- Color theme
@@ -91,14 +91,18 @@ return require('packer').startup(function(use)
 -- Indent with Highlight chunk
     use { "shellRaining/hlchunk.nvim" }
 -- Lsp config
+    use {
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
+    use { 'williamboman/mason-lspconfig.nvim'}
     use { 'neovim/nvim-lspconfig' }
-    use { 'williamboman/mason.nvim' }
 -- Completion
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
-    use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' } -- buffer auto-completion
-    use { 'hrsh7th/cmp-path', after = 'nvim-cmp' } -- path auto-completion
-    use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' } -- cmdline auto-completion
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-buffer' } -- buffer auto-completion
+    use { 'hrsh7th/cmp-path' } -- path auto-completion
+    use { 'hrsh7th/cmp-cmdline' } -- cmdline auto-completion
     use { 'hrsh7th/nvim-cmp' }
-    use { 'hrsh7th/cmp-vsnip'}
-    use { 'hrsh7th/vim-vsnip'}
+    use { 'hrsh7th/cmp-vsnip' }
+    use { 'hrsh7th/vim-vsnip' }
 end)

@@ -35,6 +35,7 @@ map('n','<leader>jf', ':%!python -m json.tool<cr>:set foldmethod=indent<cr>:set 
 map('n','<leader>edi',":%s/'/'\r/g<cr>:nohl<cr>:set filetype=edi<cr>gg")-- for edi file add return behind ' and set file type
 map('n','<leader>c', '^f求la完成<Bslash><esc>za')-- for work needs item to complete folder
 map('n','<leader>co',"da':let b:pu=trim(execute(<c-r><c-r>"..'"))<bar>pu='.."'[' .. b:pu .. ']' <bar>unlet b:pu<cr>kgJf]")-- execute command in '' deleted it and put return message in []
+map('n','<leader>,','/<,++><cr>:nohlsearch<cr>ca<<bs>')
 
 -- Mapping in insert
 map('i','jj','<esc>')
