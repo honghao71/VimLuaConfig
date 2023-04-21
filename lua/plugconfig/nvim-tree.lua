@@ -13,9 +13,15 @@ require("nvim-tree").setup({
 	renderer = {
 		group_empty = true,
 	},
+    git = {
+        enable = true,
+        ignore = false,
+        show_on_dirs = true,
+        show_on_open_dirs = true,
+        timeout = 400,
+    },
 	filters = {
 		dotfiles = true,
 	},
 })
-
 -- NvimTree Mappings

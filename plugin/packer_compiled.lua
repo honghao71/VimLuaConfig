@@ -80,6 +80,43 @@ _G.packer_plugins = {
     path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["cmp-buffer"] = {
+    after_files = { "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-buffer\\after\\plugin\\cmp_buffer.lua" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-cmdline"] = {
+    after_files = { "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-cmdline\\after\\plugin\\cmp_cmdline.lua" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
+  ["cmp-nvim-lsp"] = {
+    after_files = { "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp\\after\\plugin\\cmp_nvim_lsp.lua" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    after_files = { "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-path\\after\\plugin\\cmp_path.lua" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-vsnip",
+    url = "https://github.com/hrsh7th/cmp-vsnip"
+  },
   ["colorful-winsep.nvim"] = {
     config = { "\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20colorful-winsep\frequire\0" },
     loaded = true,
@@ -93,6 +130,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
+  },
+  ["hlchunk.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hlchunk.nvim",
+    url = "https://github.com/shellRaining/hlchunk.nvim"
   },
   ["hop.nvim"] = {
     config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
@@ -111,6 +153,21 @@ _G.packer_plugins = {
     only_cond = false,
     path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-surround"] = {
     config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
@@ -158,6 +215,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-markdown",
     url = "https://github.com/plasticboy/vim-markdown"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "C:\\Users\\honghao\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
@@ -166,14 +228,6 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: hop.nvim
-time([[Config for hop.nvim]], true)
-try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
-time([[Config for hop.nvim]], false)
--- Config for: colorful-winsep.nvim
-time([[Config for colorful-winsep.nvim]], true)
-try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20colorful-winsep\frequire\0", "config", "colorful-winsep.nvim")
-time([[Config for colorful-winsep.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
@@ -186,6 +240,22 @@ time([[Config for nvim-tree.lua]], false)
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
+-- Config for: colorful-winsep.nvim
+time([[Config for colorful-winsep.nvim]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20colorful-winsep\frequire\0", "config", "colorful-winsep.nvim")
+time([[Config for colorful-winsep.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-cmp ]]
+vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-nvim-lsp ]]
+time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

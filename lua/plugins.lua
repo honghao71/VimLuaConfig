@@ -94,9 +94,11 @@ return require('packer').startup(function(use)
     use { 'neovim/nvim-lspconfig' }
     use { 'williamboman/mason.nvim' }
 -- Completion
-    use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
     use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' } -- buffer auto-completion
     use { 'hrsh7th/cmp-path', after = 'nvim-cmp' } -- path auto-completion
     use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' } -- cmdline auto-completion
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-vsnip'}
+    use { 'hrsh7th/vim-vsnip'}
 end)
