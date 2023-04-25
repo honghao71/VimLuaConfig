@@ -1,6 +1,13 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
+lspconfig.lua_ls.setup {}
+lspconfig.powershell_es.setup {
+    cmd = {
+        'C:\\Users\\honghao\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe','-NoLogo','-NoProfile','-Command'
+    },
+}
+-- lspconfig.marksman.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
@@ -12,7 +19,7 @@ lspconfig.rust_analyzer.setup {
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '"space"e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)

@@ -1,4 +1,4 @@
-      require('dashboard').setup {
+      require('dashboard').setup({
           -- config
           theme = 'doom',
           config = {
@@ -66,5 +66,4 @@
             },
             footer = {"瞎弄一下"}  --your footer
           }
-        }
- 
+        })

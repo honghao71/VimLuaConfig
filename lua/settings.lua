@@ -9,6 +9,11 @@ opt.softtabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.signcolumn = "yes"
+opt.cursorline = true
+opt.cursorcolumn = true
+opt.splitbelow = true
+opt.linebreak = true
+opt.colorcolumn = { "80" }
 
 vim.g.mapleader = ' '
 
@@ -16,7 +21,6 @@ vim.g.mapleader = ' '
 local map = vim.keymap.set
 -- Mapping in normal
 map('n','<leader>w',"<cmd>w<cr>")
-map('n','<leader>q','<cmd>q<cr>')
 map('n','<A-j>','<C-W>j')
 map('n','<A-k>','<C-W>k')
 map('n','<A-h>','<C-W>h')
@@ -36,6 +40,10 @@ map('n','<leader>edi',":%s/'/'\r/g<cr>:nohl<cr>:set filetype=edi<cr>gg")-- for e
 map('n','<leader>c', '^f求la完成<Bslash><esc>za')-- for work needs item to complete folder
 map('n','<leader>co',"da':let b:pu=trim(execute(<c-r><c-r>"..'"))<bar>pu='.."'[' .. b:pu .. ']' <bar>unlet b:pu<cr>kgJf]")-- execute command in '' deleted it and put return message in []
 map('n','<leader>,','/<,++><cr>:nohlsearch<cr>ca<<bs>')
+map('n','<a-<>','<c-w><')
+map('n','<a->>','<c-w>>')
+map('n','<a-->','<c-w>-')
+map('n','<a-=>','<c-w>+')
 
 -- Mapping in insert
 map('i','jj','<esc>')
@@ -53,3 +61,6 @@ map('i','<leader>,','<esc>/<,++><cr>:nohlsearch<cr>ca<<bs>')
 map('i','<leader><leader>w',"<cmd>w<cr>")
 map('i','<leader><leader>dw','<esc>F(df A')-- to delete (星期X) which paste from mail time
 
+-- Key abbreviate
+vim.cmd('iab timex <C-r>=strftime("%Y-%m-%d %H:%M")<cr>')
+vim.cmd('iab datex <C-r>=strftime("%Y-%m-%d")<cr>')

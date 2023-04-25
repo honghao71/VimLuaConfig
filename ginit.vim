@@ -14,8 +14,8 @@ function! AdjustFontSize(amount)
   let s:fontsize = s:fontsize+a:amount
   :execute "GuiFont! Hack NFM:h" . s:fontsize
 endfunction
-noremap <A-=> :call AdjustFontSize(1)<CR>
-noremap <A--> :call AdjustFontSize(-1)<CR>
+noremap <c-=> :call AdjustFontSize(1)<CR>
+noremap <c--> :call AdjustFontSize(-1)<CR>
 
 " Disable GUI Tabline
 if exists(':GuiTabline')

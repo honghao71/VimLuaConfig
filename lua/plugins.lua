@@ -1,6 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -58,16 +59,16 @@ return require('packer').startup(function(use)
         requires = {'nvim-tree/nvim-web-devicons'}
     }
 -- markdown preview
-    use { "iamcco/markdown-preview.nvim", 
-        run = "cd app && npm install", 
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
-        ft = { "markdown" }, 
-    } 
+    use { "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" },
+    }
 
     use {'plasticboy/vim-markdown',
         branch = 'master',
         require = {'godlygeek/tabular'},
-    } 
+    }
 -- Colorful window seperator
     use {
         "nvim-zh/colorful-winsep.nvim",
@@ -105,4 +106,6 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-vsnip' }
     use { 'hrsh7th/vim-vsnip' }
+-- Rainbow2
+    use { 'HiPhish/nvim-ts-rainbow2' }
 end)
