@@ -14,6 +14,7 @@ opt.cursorcolumn = true
 opt.splitbelow = true
 opt.linebreak = true
 opt.colorcolumn = { "80" }
+opt.scrolloff = 3
 
 vim.g.mapleader = ' '
 
@@ -26,8 +27,6 @@ map('n','<A-k>','<C-W>k')
 map('n','<A-h>','<C-W>h')
 map('n','<A-l>','<C-W>l')
 map('n','<leader>r','"*')
-map('n','<leader>tt','<cmd>NvimTreeToggle C:\\Users\\honghao\\AppData\\Local\\nvim\\<cr>')
-map('n','<leader>tn','<cmd>NvimTreeToggle D:\\文档\\内贸\\需求\\<cr>')
 map('n','<leader>dw','F(df A')
 map('n','Y','y$')
 map('n','<leader>h','^')
@@ -44,6 +43,7 @@ map('n','<a-<>','<c-w><')
 map('n','<a->>','<c-w>>')
 map('n','<a-->','<c-w>-')
 map('n','<a-=>','<c-w>+')
+map('n','<leader>wx','0f[lrx')
 
 -- Mapping in insert
 map('i','jj','<esc>')

@@ -46,12 +46,32 @@
                     {
                         icon = ' ',
                         icon_hl = 'Title',
+                        desc = 'Open Nvim-Tree Domestic',
+                        desc_hl = 'String',
+                        key = 'd',
+                        key_hl = 'Number',
+                        keymap = 'SPC t d',
+                        action = 'NvimTreeToggle D:\\文档\\内贸'
+                   },
+                    {
+                        icon = ' ',
+                        icon_hl = 'Title',
                         desc = 'Open Nvim-Tree need',
                         desc_hl = 'String',
                         key = 'n',
                         key_hl = 'Number',
                         keymap = 'SPC t n',
                         action = 'NvimTreeToggle D:\\文档\\内贸\\需求'
+                   },
+                    {
+                        icon = ' ',
+                        icon_hl = 'Title',
+                        desc = 'Open Nvim-Tree PSscript',
+                        desc_hl = 'String',
+                        key = 'p',
+                        key_hl = 'Number',
+                        keymap = 'SPC t p',
+                        action = 'NvimTreeToggle D:\\software\\pwsh\\'
                    },
                   {
                         icon = ' ',

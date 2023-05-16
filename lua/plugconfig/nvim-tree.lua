@@ -26,3 +26,8 @@ require("nvim-tree").setup({
 	},
 })
 -- NvimTree Mappings
+local map = vim.keymap.set
+map('n','<leader>tt','<cmd>NvimTreeToggle C:\\Users\\honghao\\AppData\\Local\\nvim\\<cr>')
+map('n','<leader>tn','<cmd>NvimTreeToggle D:\\文档\\内贸\\需求\\<cr>')
+map('n','<leader>tp','<cmd>NvimTreeToggle D:\\software\\pwsh\\<cr>')
+map('n','<leader>tf','<cmd>NvimTreeFindFile!<cr>')

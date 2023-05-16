@@ -1,14 +1,18 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+-- local on_attach = require'lspconfig'.on_attach
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 lspconfig.pyright.setup {}
 lspconfig.lua_ls.setup {}
+lspconfig.html.setup {}
 lspconfig.powershell_es.setup {
-    cmd = {
-        'C:\\Users\\honghao\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe','-NoLogo','-NoProfile','-Command'
-    },
+    bundle_path = 'C:\\Users\\honghao\\AppData\\Local\\nvim-data\\mason\\packages\\powershell-editor-services',
 }
 -- lspconfig.marksman.setup {}
 lspconfig.tsserver.setup {}
+
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
     settings = {
