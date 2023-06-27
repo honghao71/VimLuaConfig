@@ -20,10 +20,12 @@ map('n', 'o',
 map('i', '<enter>',
     function()
         local line = vim.fn.getline(".")
-        if vim.o.filetype == "markdown" and string.match(line,"^%s+-%s*$") then
-            return '<esc><<A'
+        if vim.o.filetype == "markdown" and string.match(line,"^%s+-%s+$") then
+            return ' <bs><esc><<A'
         elseif vim.o.filetype == "markdown" and (string.match(line,"^-%s*$") or string.match(line,"^%s+$")) then
             return '<esc>0DA'
+        elseif vim.o.filetype == "markdown" and (string.match(line,"^%s*-$")) then
+            return '<esc><<A '
         end
         return '<enter>'
     end,
