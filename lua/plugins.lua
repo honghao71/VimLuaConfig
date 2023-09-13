@@ -109,4 +109,6 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/vim-vsnip-integ' }
 -- Rainbow2
     use { 'HiPhish/nvim-ts-rainbow2' }
+-- dairy
+    use { 'ishchow/nvim-deardiary' }
 end)
