@@ -91,6 +91,8 @@ return require('packer').startup(function(use)
     }
 -- Indent with Highlight chunk
     use { "shellRaining/hlchunk.nvim" }
+-- Format align
+    use { 'echasnovski/mini.align' }
 -- Lsp config
     use {
         "williamboman/mason.nvim",

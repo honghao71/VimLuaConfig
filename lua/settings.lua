@@ -60,6 +60,7 @@ map('i','<leader> <,++>','<> <,++><esc>6hi')
 map('i','<leader>,','<esc>/<,++><cr>:nohlsearch<cr>ca<<bs>')
 map('i','<leader><leader>w',"<cmd>w<cr>")
 map('i','<leader><leader>dw','<esc>F(df A')-- to delete (星期X) which paste from mail time
+map('i','<leader><leader>fn','<c-r>=expand("%:t:r")<cr>')-- Insert filename without ex
 
 -- Key abbreviate
 vim.cmd('iab timex <C-r>=strftime("%Y-%m-%d %H:%M")<cr>')

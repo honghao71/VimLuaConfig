@@ -18,6 +18,7 @@ require('plugconfig.lsp.mason')
 require('plugconfig.nvim-tree')
 require('plugconfig.telescope')
 require("nvim-surround").setup()
+require('mini.align').setup()
 require("plugconfig.dairy")
 -- Will error if use below. Different require in packger plugins.lua
 -- require('plugconfig.dashboard')
