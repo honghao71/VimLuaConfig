@@ -44,6 +44,7 @@ map('n','<a->>','<c-w>>')
 map('n','<a-->','<c-w>-')
 map('n','<a-=>','<c-w>+')
 map('n','<leader>wx','0f[lrx')
+map('n','<leader>fn','a<c-r>=expand("%:t:r")<cr><esc>')-- Insert filename without ex
 
 -- Mapping in insert
 map('i','jj','<esc>')
