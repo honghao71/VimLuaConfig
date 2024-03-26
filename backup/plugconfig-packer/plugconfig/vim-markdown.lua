@@ -1,11 +1,26 @@
 
+-- vim.o.conceallevel=2
+-- vim.o.concealcursor="nc"
 local map = vim.keymap.set
+-- let vimwiki don't set filetype to vimwiki for markdown
+vim.g.vimwiki_global_ext = 0
+vim.cmd("highlight @markup.strong guifg=#ea88aa  gui=bold")
+vim.cmd("highlight @markup.italic guifg=#ea88aa gui=italic")
+vim.cmd("highlight @markup.strikethrough guifg=#5a6e8e gui=underline,strikethrough")
+vim.cmd("highlight @markup.inline guifg=#bfa99f")
+vim.o.conceallevel=2
+
 map('n','<leader>mp','<cmd>MarkdownPreviewToggle<cr>')
 map('i','<leader><leader>mp','<cmd>MarkdownPreviewToggle<cr>')
 map('n','<leader>i',"i<img src='./IMG' align=center width=100%/><esc>F'i")
 map('i','<leader><leader>i',"<img src='./IMG' align=center width=100%/><esc>F'i")
 map('n','<leader>mc',"<cmd>lua HH_CustomCssFile()<cr>")
+map('n','gl-',"^i- <esc>")
+map('n','gl1',"^i1. <esc>")
+map('n','gl ',"^a <esc>$")
 map('n','<leader>mr',"<cmd>r ~/AppData/Local/nvim/lua/css_markdown/AutoNumber-ForFile.md<cr>")
+map('n','<leader>mt',"<cmd>s/\\v\\t/|/g<cr>I|<esc>A|||<esc><cmd>nohl<cr>")
+map('n','<leader>mq',"vip:s/\\v\\s+\\|/\\|/g<cr><cmd>nohl<cr>")
 -- map o when markdown file as insert at line end
 map('n', 'o',
     function()

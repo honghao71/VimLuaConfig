@@ -2,11 +2,12 @@
 
 -- Only required if you have packer configured as `opt`
 
+-- local dbconfig=require("plugconfig.my-dashboard")
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use { 'wbthomason/packer.nvim' }
 -- Directory Tree  
     use {
         'nvim-tree/nvim-tree.lua',
@@ -32,8 +33,11 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }
+    use {
+        'nvim-treesitter/playground'
+    }
 -- Surrounding pairs
-    use({
+    use{
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
         config = function()
@@ -41,7 +45,7 @@ return require('packer').startup(function(use)
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    })
+    }
 -- Motion Hop
     use {
         'phaazon/hop.nvim',
@@ -53,9 +57,11 @@ return require('packer').startup(function(use)
     }
 -- Start
     use {
-        'glepnir/dashboard-nvim',
+        'nvimdev/dashboard-nvim',
         event = 'VimEnter',
-        config = function() require("plugconfig/dashboard") end,
+        config = function()
+            require('plugconfig.dashboard')
+        end,
         requires = {'nvim-tree/nvim-web-devicons'}
     }
 -- markdown preview
@@ -65,7 +71,7 @@ return require('packer').startup(function(use)
         ft = { "markdown" },
     }
 
-    use {'plasticboy/vim-markdown',
+    use { 'preservim/vim-markdown',
         branch = 'master',
         require = {'godlygeek/tabular'},
     }
@@ -85,7 +91,7 @@ return require('packer').startup(function(use)
     }
  -- Fuzzy find with telescope
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
         -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
@@ -111,6 +117,7 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/vim-vsnip-integ' }
 -- Rainbow2
     use { 'HiPhish/nvim-ts-rainbow2' }
+    use { 'vimwiki/vimwiki' }
 -- dairy
-    use { 'ishchow/nvim-deardiary' }
+    use { 'mattn/calendar-vim' }
 end)

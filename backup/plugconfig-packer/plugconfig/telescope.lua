@@ -5,3 +5,10 @@ vim.keymap.set('n','<leader>fv','<cmd>Telescope vim_options<cr>')
 vim.keymap.set('n','<leader>fo','<cmd>Telescope oldfiles<cr>')
 vim.keymap.set('n','<leader>fh','<cmd>Telescope highlights<cr>')
 vim.keymap.set('n','<leader>fw',':Telescope')
+
+local ts = require('telescope')
+ts.setup{
+    defaults={
+        prompt_prefix = "8=> "
+    }
+}

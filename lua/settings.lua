@@ -17,6 +17,18 @@ opt.colorcolumn = { "80" }
 opt.scrolloff = 3
 
 vim.g.mapleader = ' '
+-- group autocmd for fold
+local foldway = vim.api.nvim_create_augroup('foldway', { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "json" },
+  group = "foldway",
+  command = "set foldmethod=expr | set foldexpr=nvim_treesitter#foldexpr()",
+})
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ps1",
+  group = "foldway",
+  command = "set foldmethod=syntax",
+})
 
 -- common mappings
 local map = vim.keymap.set

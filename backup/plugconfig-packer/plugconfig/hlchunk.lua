@@ -16,6 +16,7 @@
             "*.hpp",
             "*.lua",
             "*.vue",
+            "*.md",
         },
         chars = {
             horizontal_line = "─",

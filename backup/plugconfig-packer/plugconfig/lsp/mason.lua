@@ -12,3 +12,4 @@ require("mason").setup({
 require("mason-lspconfig").setup {
     ensure_installed = { "lua_ls", "html","jsonls","ltex","powershell_es","pyright" },
 }
+require("lspconfig").lua_ls.setup {}
