@@ -1,19 +1,36 @@
 -- function for mapping "o" in markdown
-local function mapf_o()
-    if vim.o.filetype == "markdown" then
-        return 'A<cr>'
+function HH_mapf_o ()
+    local line = vim.fn.getline(".")
+    local line_number = vim.fn.line(".")
+    local insert
+    local indent, number , text= string.match(line,"^(%s*)(%d)(%..*)$")
+    local indent_l, list = string.match(line,"^(%s*)([-*]).*$")
+    if vim.o.filetype == "markdown" and number then
+        local next_number = number+1
+        insert = indent .. next_number .. ". "
+        vim.fn.append(line_number, insert)
+        vim.fn.cursor(line_number+1,vim.fn.col("$"))
+        vim.api.nvim_feedkeys('A','n',true)
+    elseif vim.o.filetype == "markdown" and list then
+        insert = indent_l .. list .. " "
+        vim.fn.append(line_number, insert)
+        vim.fn.cursor(line_number+1,vim.fn.col("$"))
+        vim.api.nvim_feedkeys('A','n',true)
+    else
+        vim.api.nvim_feedkeys('o','n',true)
     end
-    return 'o'
 end
 -- function for mapping "<enter>" in markdown
 local function mapf_cr()
     local line = vim.fn.getline(".")
-    if vim.o.filetype == "markdown" and string.match(line,"^%s+-%s+$") then
+    if vim.o.filetype == "markdown" and (string.match(line,"^%s+[-*]%s+$") or string.match(line,"^%s+%d%.%s+$"))then
         return ' <bs><esc><<A'
-    elseif vim.o.filetype == "markdown" and (string.match(line,"^-%s*$") or string.match(line,"^%s+$")) then
+    elseif vim.o.filetype == "markdown" and (string.match(line,"^[-*]%s*$") or string.match(line,"^%d%.%s*$") or string.match(line,"^%s+$")) then
         return '<esc>0DA'
-    elseif vim.o.filetype == "markdown" and (string.match(line,"^%s*-$")) then
+    elseif vim.o.filetype == "markdown" and (string.match(line,"^%s*[-*]$") or string.match(line,"^%s*%d%.$")) then
         return '<esc><<A '
+    elseif vim.o.filetype == "markdown" and (string.match(line,"^%s+[-*]%s+.+$") or string.match(line,"^%s+%d%.%s+.+$"))then
+        return '<esc><cmd>=HH_mapf_o()<cr>'
     end
     return '<enter>'
 end
@@ -28,12 +45,12 @@ return {
         {'<leader>mp','<cmd>MarkdownPreviewToggle<cr>', desc = "mardkown"},
         {'<leader>i', "i<img src='./IMG' align=center width=100%/><esc>F'i", desc = "mardkown"},
         {'<leader>mc',"<cmd>lua HH_CustomCssFile()<cr>", desc = "mardkown"},
-        {'gl-',"^i- <esc>", desc = "mardkown"},
-        {'gl1',"^i1. <esc>", desc = "mardkown"},
-        {'gl ',"^a <esc>$", desc = "mardkown"},
+        {'gl-',"^i- <esc>", desc = "mardkown change to - list"},
+        {'gl1',"^i1. <esc>", desc = "mardkown change to number list"},
+        {'gl ',"^a <esc>$", desc = "mardkown add space behind fist charactor"},
         {'<leader>mr',"<cmd>r ~/AppData/Local/nvim/lua/css_markdown/AutoNumber-ForFile.md<cr>", desc = "mardkown"},
-        {'<leader>mq',"lT|dt|i", desc = "mardkown"},
-        {'<leader>mt',"<cmd>Tabularize /|/l0<cr>", desc = "mardkown"},
+        {'<leader>mq',"lT|dt|i", desc = "mardkown delete between |"},
+        {'<leader>mt',"<cmd>Tabularize /|/l0<cr>", desc = "mardkown format table"},
         -- map o when markdown file as insert at line end
         -- When list with no content enter will remove a tab. If no tab will remove list.
     },
@@ -47,8 +64,8 @@ return {
         vim.o.foldmethod="expr"
         vim.g.mkdp_theme = 'light'
         -- Toggle Custom Css file
-        vim.keymap.set('n', 'o', mapf_o, { expr = true })
-        vim.keymap.set('i', '<enter>',mapf_cr, { expr = true })
+        vim.keymap.set('n', 'o', '<cmd>=HH_mapf_o()<cr>',{ expr = false })
+        vim.keymap.set('i', '<enter>',mapf_cr, { expr = true})
         function HH_CustomCssFile()
             if vim.g.mkdp_markdown_css == nil or vim.g.mkdp_markdown_css == "" then
                 vim.g.mkdp_markdown_css = "C:\\Users\\honghao\\AppData\\Local\\nvim\\lua\\css_markdown\\AutoNmber-ForCustomCSS.css";

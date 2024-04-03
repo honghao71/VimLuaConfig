@@ -1,6 +1,6 @@
 return{
     "neovim/nvim-lspconfig",
-    priority = 800,
+    event = "VeryLazy",
     config = function ()
         -- Setup language servers.
         local lspconfig = require('lspconfig')

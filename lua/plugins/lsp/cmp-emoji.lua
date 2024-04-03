@@ -1,4 +1,4 @@
 return {
-    "hrsh7th/vim-vsnip-integ",
+    "hrsh7th/cmp-emoji",
     event = "InsertEnter",
 }

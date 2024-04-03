@@ -1,4 +1,4 @@
 return{
     "hrsh7th/cmp-buffer",
-    priority = 770,
+    event = "InsertEnter",
 }

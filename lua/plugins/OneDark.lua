@@ -1,5 +1,6 @@
 return {
     'navarasu/onedark.nvim',
+    -- event = "VeryLazy",
     config = function ()
         require('onedark').setup  {
             -- Main options --

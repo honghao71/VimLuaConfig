@@ -1,6 +1,6 @@
 return {
     "williamboman/mason.nvim",
-    priority = 1000,
+    event = "VeryLazy",
     config = function ()
         require("mason").setup({
             ui = {

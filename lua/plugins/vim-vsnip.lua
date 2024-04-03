@@ -1,5 +1,6 @@
 return{
     "hrsh7th/vim-vsnip",
+    event = "InsertEnter",
     config = function ()
         local map = vim.keymap.set
         vim.cmd([[

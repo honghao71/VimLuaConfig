@@ -1,5 +1,6 @@
 return {
     'HiPhish/nvim-ts-rainbow2',
+    event = {"BufReadPre", "BufNewFile"},
     config = function ()
         require('nvim-treesitter.configs').setup {
           rainbow = {

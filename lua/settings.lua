@@ -20,7 +20,7 @@ vim.g.mapleader = ' '
 -- group autocmd for fold
 local foldway = vim.api.nvim_create_augroup('foldway', { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "json" },
+  pattern = { "json","lua" },
   group = "foldway",
   command = "set foldmethod=expr | set foldexpr=nvim_treesitter#foldexpr()",
 })
@@ -38,7 +38,7 @@ map('n','<A-j>','<C-W>j')
 map('n','<A-k>','<C-W>k')
 map('n','<A-h>','<C-W>h')
 map('n','<A-l>','<C-W>l')
-map('n','<leader>r','"*')
+map({'n','v'},'<leader>r','"*')
 map('n','<leader>dw','F(df A')
 map('n','Y','y$')
 map('n','<leader>h','^')
@@ -57,6 +57,9 @@ map('n','<a-->','<c-w>-')
 map('n','<a-=>','<c-w>+')
 map('n','<leader>wx','0f[lrx')
 map('n','<leader>fn','a<c-r>=expand("%:t:r")<cr><esc>')-- Insert filename without ex
+map('n','<leader>cd','<cmd>cd %:p:h<cr>')-- Insert filename without ex
+map('n','<leader>lt', HH_lockTableHead)
+map('n','<leader>ut', HH_unlockTableHead)
 
 -- Mapping in insert
 map('i','jj','<esc>')

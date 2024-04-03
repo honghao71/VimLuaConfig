@@ -1,6 +1,6 @@
 return {
     "hrsh7th/cmp-nvim-lsp",
-    priority = 750,
+    event = "InsertEnter",
     config = function ()
         -- require'cmp'.setup {
         --   sources = {

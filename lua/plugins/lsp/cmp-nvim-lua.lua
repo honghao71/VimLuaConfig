@@ -1,6 +1,6 @@
 return {
     "hrsh7th/cmp-nvim-lua",
-    priority = 780,
+    event = "InsertEnter",
     -- config = function ()
     --     require"cmp".setup {
     --         sources = {

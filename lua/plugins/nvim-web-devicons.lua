@@ -1,5 +1,6 @@
 return {
     'nvim-tree/nvim-web-devicons',
+    event = {"BufReadPre", "BufNewFile"},
     config = function ()
         require'nvim-web-devicons'.setup {
          -- your personnal icons can go here (to override)
