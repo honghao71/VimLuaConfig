@@ -15,6 +15,7 @@ opt.splitbelow = true
 opt.linebreak = true
 opt.colorcolumn = { "80" }
 opt.scrolloff = 3
+opt.wrap = false
 
 vim.g.mapleader = ' '
 -- group autocmd for fold
@@ -34,6 +35,9 @@ vim.api.nvim_create_autocmd("FileType", {
 local map = vim.keymap.set
 -- Mapping in normal
 map('n','<leader>w',"<cmd>w<cr>")
+map('n','<leader>wq',"<cmd>wq<cr>")
+map('n','<leader>qq',"<cmd>q<cr>")
+map('n','<leader>qa',"<cmd>qa<cr>")
 map('n','<A-j>','<C-W>j')
 map('n','<A-k>','<C-W>k')
 map('n','<A-h>','<C-W>h')
@@ -60,6 +64,8 @@ map('n','<leader>fn','a<c-r>=expand("%:t:r")<cr><esc>')-- Insert filename withou
 map('n','<leader>cd','<cmd>cd %:p:h<cr>')-- Insert filename without ex
 map('n','<leader>lt', HH_lockTableHead)
 map('n','<leader>ut', HH_unlockTableHead)
+map('n','<leader>e','mr<cmd>q<cr>')
+map('n','<leader>ac','<esc>hi:<esc>A ')-- to add : in time
 
 -- Mapping in insert
 map('i','jj','<esc>')

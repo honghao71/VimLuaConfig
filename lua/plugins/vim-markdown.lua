@@ -34,7 +34,6 @@ local function mapf_cr()
     end
     return '<enter>'
 end
-
 return {
     'preservim/vim-markdown',
     ft = "markdown",
@@ -60,6 +59,24 @@ return {
         vim.cmd("highlight @markup.italic guifg=#ea88aa gui=italic")
         vim.cmd("highlight @markup.strikethrough guifg=#5a6e8e gui=underline,strikethrough")
         vim.cmd("highlight @markup.inline guifg=#bfa99f")
+        vim.cmd("highlight @markup.heading.1.markdown guifg=#4682b4")
+        vim.cmd("highlight @markup.heading.1.marker.markdown guifg=#4682b4")
+        vim.cmd("highlight @markup.heading.2.markdown guifg=#008b8b")
+        vim.cmd("highlight @markup.heading.2.marker.markdown guifg=#008b8b")
+        vim.cmd("highlight @markup.heading.3.markdown guifg=#cd5c5c")
+        vim.cmd("highlight @markup.heading.3.marker.markdown guifg=#cd5c5c")
+        vim.cmd("highlight @markup.heading.4.markdown guifg=#9b9b41")
+        vim.cmd("highlight @markup.heading.4.marker.markdown guifg=#9b9b41")
+        vim.cmd("highlight @markup.heading.5.markdown guifg=#aa6699")
+        vim.cmd("highlight @markup.heading.5.marker.markdown guifg=#aa6699")
+        vim.cmd("highlight @markup.heading.6.markdown guifg=#d2691e")
+        vim.cmd("highlight @markup.heading.6.marker.markdown guifg=#d2691e")
+        local HideTagFont = vim.api.nvim_create_augroup('HideTagFont', { clear = true })
+        -- vim.api.nvim_create_autocmd("FileType", {
+        --     pattern = { "markdown"},
+        --     group = "HideTagFont",
+        --     command = "syntax match @fontb \"</\\?font[^<]*>\" conceal cchar=🚩",
+        -- })
         vim.o.conceallevel=2
         vim.o.foldmethod="expr"
         vim.g.mkdp_theme = 'light'
