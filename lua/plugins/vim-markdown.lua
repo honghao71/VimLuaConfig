@@ -42,7 +42,7 @@ return {
         {'<leader><leader>mp','<cmd>MarkdownPreviewToggle<cr>', mode = "i", desc = "mardkown"},
         {'<leader><leader>i',"<img src='./IMG' align=center width=100%/><esc>F'i", mode = "i", desc = "mardkown"},
         {'<leader>mp','<cmd>MarkdownPreviewToggle<cr>', desc = "mardkown"},
-        {'<leader>i', "i<img src='./IMG' align=center width=100%/><esc>F'i", desc = "mardkown"},
+        {'<leader>i', "a<img src='./IMG' align=center width=100%/><esc>F'i", desc = "mardkown"},
         {'<leader>mc',"<cmd>lua HH_CustomCssFile()<cr>", desc = "mardkown"},
         {'gl-',"^i- <esc>", desc = "mardkown change to - list"},
         {'gl1',"^i1. <esc>", desc = "mardkown change to number list"},

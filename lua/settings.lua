@@ -30,7 +30,21 @@ vim.api.nvim_create_autocmd("FileType", {
   group = "foldway",
   command = "set foldmethod=syntax",
 })
-
+-- IM Autoselect 
+local ImSelect= vim.api.nvim_create_augroup('ImSelect', { })
+-- 进入 insert 模式时自动切换中文输入法
+vim.api.nvim_create_autocmd("InsertEnter", {
+    group = ImSelect,
+    callback = function()
+        vim.cmd(':silent :!im-select 2052')
+    end
+})
+ 
+-- 进入 VIM 时自动切换英文输入法
+vim.api.nvim_create_autocmd({"InsertLeave","VimEnter"}, {
+    group = ImSelect,
+    command = ':silent :!im-select 1033',
+})
 -- common mappings
 local map = vim.keymap.set
 -- Mapping in normal
@@ -65,7 +79,7 @@ map('n','<leader>cd','<cmd>cd %:p:h<cr>')-- Insert filename without ex
 map('n','<leader>lt', HH_lockTableHead)
 map('n','<leader>ut', HH_unlockTableHead)
 map('n','<leader>e','mr<cmd>q<cr>')
-map('n','<leader>ac','<esc>hi:<esc>A ')-- to add : in time
+map('n','<leader>ac',':call search(" \\\\d\\\\d\\\\d\\\\d","bw")<CR>lla:<esc>A')-- to add : in time
 
 -- Mapping in insert
 map('i','jj','<esc>')
