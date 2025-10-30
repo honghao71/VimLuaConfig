@@ -16,6 +16,14 @@ opt.linebreak = true
 opt.colorcolumn = { "80" }
 opt.scrolloff = 3
 opt.wrap = false
+-- 设置 Neovim 内部使用 UTF-8 编码
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
+opt.fileencodings = { 'utf-8', 'gbk', 'gb18030', 'latin1' }
+
+-- 其他推荐设置
+opt.fileformat = 'unix'        -- 或 'dos'，根据系统
+opt.fileformats = { 'unix', 'dos', 'mac' }
 
 vim.g.mapleader = ' '
 -- group autocmd for fold
@@ -31,20 +39,20 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "set foldmethod=syntax",
 })
 -- IM Autoselect 
-local ImSelect= vim.api.nvim_create_augroup('ImSelect', { })
+-- local ImSelect= vim.api.nvim_create_augroup('ImSelect', { })
 -- 进入 insert 模式时自动切换中文输入法
-vim.api.nvim_create_autocmd("InsertEnter", {
-    group = ImSelect,
-    callback = function()
-        vim.cmd(':silent :!im-select 2052')
-    end
-})
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+--     group = ImSelect,
+--     callback = function()
+--         vim.cmd(':silent :!im-select 2052')
+--     end
+-- })
  
 -- 进入 VIM 时自动切换英文输入法
-vim.api.nvim_create_autocmd({"InsertLeave","VimEnter"}, {
-    group = ImSelect,
-    command = ':silent :!im-select 1033',
-})
+-- vim.api.nvim_create_autocmd({"InsertLeave","VimEnter"}, {
+--     group = ImSelect,
+--     command = ':silent :!im-select 1033',
+-- })
 -- common mappings
 local map = vim.keymap.set
 -- Mapping in normal
