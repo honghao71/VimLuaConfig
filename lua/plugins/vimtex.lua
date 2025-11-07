@@ -1,5 +1,6 @@
 return {
     "lervag/vimtex",
+    dependencies = {'godlygeek/tabular'},
     lazy = false,     -- we don't want to lazy load VimTeX
   ft = { 'tex', 'latex' },   -- tag = "v2.15", -- uncomment to pin to a specific release
     init = function()
@@ -15,14 +16,17 @@ vim.g.vimtex_compiler_method = 'latexmk'
 vim.g.vimtex_compiler_latexmk = {
   executable = 'latexmk',
   options = {
-    '-pdf',                    -- 使用 pdflatex 编译
     '-verbose',
     '-file-line-error',
     '-synctex=1',              -- 启用 SyncTeX 双向同步
     '-interaction=nonstopmode',
+    '-xelatex',
+    '-outdir="build"'
   },
   -- 可选：将辅助文件放入 build 目录
-  out_dir = 'build',
+  out_dir = '.\\build',
+    continous=1,
+    callback=1
 }
 
 -- ======================

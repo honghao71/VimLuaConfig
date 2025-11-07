@@ -31,17 +31,18 @@ return{
       filetypes = { "tex", "latex", "bib" },
       settings = {
         texlab = {
-          auxDirectory = ".",
-          build = {
-            executable = "latexmk",
-            args = {
-              "-pdf",
-              "-interaction=nonstopmode",
-              "-synctex=1",
-              "%f"
-            },
-            onSave = true,
-          },
+          -- auxDirectory = ".",
+          -- build = {
+          --   executable = "latexmk",
+          --   args = {
+          --     "-pdf",
+          --     "-interaction=nonstopmode",
+          --     "-synctex=1",
+          --     "%f",
+          --     "-outdir=build"
+          --   },
+          --   onSave = true,
+          -- },
           chktex = { onOpenAndSave = true },
           lintOnChange = true,
           forwardSearchAfter = true,
@@ -112,7 +113,7 @@ return{
         vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
         vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
         vim.keymap.set('n', '<leader>td',function ()
-            vim.diagnostic.enable(not vim.diagnostic.is_enabled(),{bufnr = 0})
+            vim.diagnostic.enable(not vim.diagnostic.is_enabled(),{bufnr = 0},{ desc = "Toggle diagnostics" })
             end)
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
