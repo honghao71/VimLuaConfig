@@ -16,6 +16,7 @@ opt.linebreak = true
 opt.colorcolumn = { "80" }
 opt.scrolloff = 3
 opt.wrap = false
+opt.undofile = true
 -- 设置 Neovim 内部使用 UTF-8 编码
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
@@ -88,6 +89,7 @@ map('n','<leader>lt', HH_lockTableHead)
 map('n','<leader>ut', HH_unlockTableHead)
 map('n','<leader>e','mr<cmd>q<cr>')
 map('n','<leader>ac',':call search(" \\\\d\\\\d\\\\d\\\\d","bw")<CR>lla:<esc>A')-- to add : in time
+map('n','<leader>u',':Atone toggle<cr>')
 
 -- Mapping in insert
 map('i','jj','<esc>')
