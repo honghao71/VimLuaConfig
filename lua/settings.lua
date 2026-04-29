@@ -27,7 +27,11 @@ opt.fileencodings = { 'utf-8', 'gbk', 'gb18030', 'latin1' }
 opt.fileformat = 'unix'        -- 或 'dos'，根据系统
 opt.fileformats = { 'unix', 'dos', 'mac' }
 
+-- 限制 ShaDa 记录数量（例如最多 1000 条命令/搜索历史）
+opt.shada = "!,'100,<50,s10,h,:1000,/1000,f100"
+
 vim.g.mapleader = ' '
+vim.g.python3_host_prog = 'D:\\Scoop\\shims\\python3.exe'
 -- group autocmd for fold
 local foldway = vim.api.nvim_create_augroup('foldway', { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

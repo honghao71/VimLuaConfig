@@ -7,11 +7,11 @@ return {
     },
     -- NvimTree Mappings
     keys = {
-        {"<leader>tt","<cmd>NvimTreeToggle C:\\Users\\honghao\\AppData\\Local\\nvim\\<cr>", desc = "NvimTree"},
-        {"<leader>tn","<cmd>NvimTreeToggle D:\\文档\\内贸\\需求\\<cr>", desc = "NvimTree"},
-        {"<leader>tp","<cmd>NvimTreeToggle D:\\software\\pwsh\\<cr>", desc = "NvimTree"},
-        {"<leader>tf","<cmd>NvimTreeFindFile!<cr>", desc = "NvimTree"},
-        {"<leader>t.","<cmd>NvimTreeToggle .\\<cr>", desc = "NvimTree"},
+        {"<leader>tt","<cmd>NvimTreeToggle C:\\Users\\honghao\\AppData\\Local\\nvim\\<cr>", desc = "NvimTree nvim setting"},
+        {"<leader>tn","<cmd>NvimTreeToggle D:\\文档\\内贸\\需求\\<cr>", desc = "NvimTree needs"},
+        {"<leader>tp","<cmd>NvimTreeToggle D:\\Documents\\PowerShell<cr>", desc = "NvimTree pwsh setting"},
+        {"<leader>tf","<cmd>NvimTreeFindFile!<cr>", desc = "NvimTree current file directory"},
+        {"<leader>t.","<cmd>NvimTreeToggle .\\<cr>", desc = "NvimTree current path directory"},
     },
     config = function()
         -- disable netrw at the very start of your init.lua (strongly advised)
